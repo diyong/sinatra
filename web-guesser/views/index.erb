@@ -1,5 +1,20 @@
 <html>
-	<head> </head>
+	<head>
+		<style>
+			body {
+				background: <%= 
+					case message
+					when "Way too high!" || "Way too low!"
+						"red"
+					when "Too high!" || "Too low!"
+						"orangered"
+					when "You got it right! The secret number is #{SECRET_NUMBER}"
+						"green"
+					end
+				%>;
+			}
+		</style>
+	</head>
 	<body>
 		<p>
 			Guess the secret number! The number is between 0 and 100.
